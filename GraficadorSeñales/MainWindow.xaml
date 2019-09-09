@@ -7,13 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Señal Parabolica" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="Amplitud:" VerticalAlignment="Top" RenderTransformOrigin="-5.71,-12.287" Visibility="Hidden"/>
-        <TextBox x:Name="txtAmplitud" HorizontalAlignment="Left" Height="18" Margin="10,52,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="77" Visibility="Hidden"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,75,0,0" TextWrapping="Wrap" Text="Fase:" VerticalAlignment="Top" Visibility="Hidden"/>
-        <TextBox x:Name="txtFase" HorizontalAlignment="Left" Height="17" Margin="10,96,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="77" Visibility="Hidden"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,118,0,0" TextWrapping="Wrap" Text="Frecuencia:" VerticalAlignment="Top" Visibility="Hidden"/>
-        <TextBox x:Name="txtFrecuencia" HorizontalAlignment="Left" Height="17" Margin="10,139,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="77" Visibility="Hidden"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Tipo de señal:" VerticalAlignment="Top"/>
+
         <TextBlock HorizontalAlignment="Left" Margin="205,34,0,0" TextWrapping="Wrap" Text="Tiempo inicial" VerticalAlignment="Top"/>
         <TextBox x:Name="txtTiempoInicial" HorizontalAlignment="Left" Height="18" Margin="205,56,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="77"/>
         <TextBlock HorizontalAlignment="Left" Margin="205,77,0,0" TextWrapping="Wrap" Text="Tiempo final" VerticalAlignment="Top"/>
@@ -27,9 +22,16 @@
             </Grid>
         </ScrollViewer>
         <TextBlock HorizontalAlignment="Left" Margin="205,121,0,0" TextWrapping="Wrap" Text="Frecuencia de muestreo:" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtFrecuenciadeMuestreo" HorizontalAlignment="Left" Height="17" Margin="214,139,0,0" TextWrapping="Wrap" Text="1000" VerticalAlignment="Top" Width="68"/>
+        <TextBox x:Name="txtFrecuenciadeMuestreo" HorizontalAlignment="Left" Height="17" Margin="203,139,0,0" TextWrapping="Wrap" Text="1000" VerticalAlignment="Top" Width="68"/>
         <TextBlock x:Name="lblLimiteSuperior" HorizontalAlignment="Left" Margin="22,182,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="-0.517,-3.477" TextAlignment="Right" Width="148"/>
         <TextBlock x:Name="lblLimiteInferior" HorizontalAlignment="Left" Margin="22,393,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="-0.517,-3.477" TextAlignment="Right" Width="148"/>
         <TextBlock HorizontalAlignment="Left" Margin="22,278,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="-0.517,-3.477" TextAlignment="Right" Width="148"/>
+        <Grid x:Name="panelConfiguracion" HorizontalAlignment="Left" Height="363" Margin="10,56,0,0" VerticalAlignment="Top" Width="190"/>
+        <ComboBox x:Name="CbTipoSeñal" HorizontalAlignment="Left" Margin="10,26,0,0" VerticalAlignment="Top" Width="190" SelectedIndex="0" SelectionChanged="CbTipoSeñal_SelectionChanged">
+            <ComboBoxItem>Señal Exponencial</ComboBoxItem>
+            <ComboBoxItem>Señal Senoidal</ComboBoxItem>
+        </ComboBox>
+
+
     </Grid>
 </Window>
