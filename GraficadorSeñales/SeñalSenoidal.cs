@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GraficadorSeñales
 {
-    class SeñalSenoidal
+    class SeñalSenoidal : señal
     {
         //Auto prperties
         //Atributos encapsulados de c#
@@ -15,7 +15,7 @@ namespace GraficadorSeñales
         public double Fase { get; set; }
         public double Frecuencia { get; set; }
         
-        public List<Muestra> Muestras { get; set; }
+        
 
         //Constrtuctor se ejecuta al instanciar la clase
         //Sintaxis: public NombreClase(Parametros)
@@ -25,6 +25,8 @@ namespace GraficadorSeñales
             Amplitud = 1.0;
             Fase = 0.0;
             Frecuencia = 1.0;
+
+            AmplitudMaxima = 0.0;
 
             Muestras = new List<Muestra>();
         }
@@ -38,7 +40,7 @@ namespace GraficadorSeñales
             Muestras = new List<Muestra>(); 
         }
 
-        public double evaluar(double tiempo)
+        override public double evaluar(double tiempo)
         {
             double resultado = 0.0;
 

@@ -30,6 +30,7 @@
         <ComboBox x:Name="CbTipoSeñal" HorizontalAlignment="Left" Margin="10,26,0,0" VerticalAlignment="Top" Width="190" SelectedIndex="0" SelectionChanged="CbTipoSeñal_SelectionChanged">
             <ComboBoxItem>Señal Exponencial</ComboBoxItem>
             <ComboBoxItem>Señal Senoidal</ComboBoxItem>
+            <ComboBoxItem>Señal Exponencial</ComboBoxItem>
         </ComboBox>
 
 
