@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using Microsoft.Win32;
+
 namespace GraficadorSeñales
 {
     /// <summary>
@@ -25,9 +27,14 @@ namespace GraficadorSeñales
             InitializeComponent();
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
 
+        private void BtnElegir_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            if ((bool)fileDialog.ShowDialog())
+            {
+                txtRutaArchivo.Text = fileDialog.FileName;
+            }
         }
     }
 }

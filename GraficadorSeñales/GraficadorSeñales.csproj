@@ -71,6 +71,7 @@
     <Compile Include="Función.cs" />
     <Compile Include="Muestra.cs" />
     <Compile Include="señal.cs" />
+    <Compile Include="SeñalAudio.cs" />
     <Compile Include="SeñalExponencial.cs" />
     <Compile Include="SeñalParabolica.cs" />
     <Compile Include="SeñalSenoidal.cs" />

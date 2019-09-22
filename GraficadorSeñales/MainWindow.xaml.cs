@@ -36,7 +36,7 @@ namespace GraficadorSeñales
             /*SeñalSenoidal señal = new SeñalSenoidal(amplitud, fase, frecuencia);*/
             señal señal;
 
-            switch(CbTipoSeñal.SelectedIndex)
+            switch (CbTipoSeñal.SelectedIndex)
             {
                 case 0: //paraboloca
                     señal = new SeñalParabolica();
@@ -54,16 +54,27 @@ namespace GraficadorSeñales
                     double alpha = double.Parse(((ConfiguracionSeñalExponencial)(panelConfiguracion.Children[0])).txtAlpha.Text);
                     señal = new SeñalExponencial(alpha);
                     break;
+                case 3:
+                    string rutaArchivo = ((ConfiguracionAudio)(panelConfiguracion.Children[0])).txtRutaArchivo.Text;
+                    señal = new SeñalAudio(rutaArchivo);
+                    txtTiempoInicial.Text = señal.TiempoInicial.ToString();
+                    txtTiempoFinal.Text = señal.TiempoFinal.ToString();
+                    txtFrecuenciadeMuestreo.Text = señal.FrecuenciaMuestreo.ToString();
+                    break;
                 default:
                     señal = null;
                     break;
             }
+            if (CbTipoSeñal.SelectedIndex != 2 && señal != null)
+            {
 
-            señal.TiempoInicial = tiempoInicial;
-            señal.TiempoFinal = tiempoFinal;
-            señal.FrecuenciaMuestreo = frecuenciademuestreo;
+                señal.TiempoInicial = tiempoInicial;
+                señal.TiempoFinal = tiempoFinal;
+                señal.FrecuenciaMuestreo = frecuenciademuestreo;
 
-            señal.construirSeñal();
+                señal.construirSeñal();
+            }
+            
 
 
             /*Función señal = new Función();*/
@@ -77,8 +88,8 @@ namespace GraficadorSeñales
                 plnGrafica.Points.Add(adaptarCoordenadas(muestra.X,muestra.Y,tiempoInicial,amplitudMaxima));
             }
 
-            lblLimiteSuperior.Text = amplitudMaxima.ToString();
-            lblLimiteInferior.Text = "-" + amplitudMaxima.ToString();
+            lblLimiteSuperior.Text = amplitudMaxima.ToString("F");
+            lblLimiteInferior.Text = "-" + amplitudMaxima.ToString("F");
 
             plnEjeX.Points.Clear();
             plnEjeX.Points.Add(adaptarCoordenadas(tiempoInicial,0.0,tiempoInicial,amplitudMaxima));
@@ -105,6 +116,11 @@ namespace GraficadorSeñales
                     break;
                 case 2:
                     panelConfiguracion.Children.Add(new ConfiguracionSeñalExponencial());
+                    break;
+                case 3:
+                    panelConfiguracion.Children.Add(new ConfiguracionAudio());
+                    break;
+                default:
                     break;
 
 
