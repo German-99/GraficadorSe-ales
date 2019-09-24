@@ -7,7 +7,7 @@
              mc:Ignorable="d" Height="435" Width="712">
     <Grid Margin="10,10,577,376">
         <TextBlock HorizontalAlignment="Left" Margin="5,-3,0,0" TextWrapping="Wrap" Text="Escala" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="0,13,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtFactorEscala" HorizontalAlignment="Left" Height="23" Margin="0,13,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </UserControl>

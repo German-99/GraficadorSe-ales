@@ -92,10 +92,9 @@ namespace GraficadorSeñales
             /*Función señal = new Función();*/
             
             double amplitudMaxima = señal.AmplitudMaxima;
-            double amplitudMaximaResultado = señalResultante.AmplitudMaxima;
 
             plnGrafica.Points.Clear();
-            plnGraficaResultante.points.clear();
+            plnGraficaResultante.Points.Clear();
 
             foreach(Muestra muestra in señal.Muestras)
             {
@@ -103,27 +102,27 @@ namespace GraficadorSeñales
             }
             foreach(Muestra muestra in señalResultante.Muestras)
             {
-                plnGraficaResultante.Points.Add(adaptarCoordenadas(muestra.X, muestra.Y, tiempoInicial, amplitudMaximaResultado));
+                plnGraficaResultante.Points.Add(adaptarCoordenadas(muestra.X, muestra.Y, tiempoInicial, amplitudMaxima));
             }
 
             lblLimiteSuperior.Text = amplitudMaxima.ToString("F");
             lblLimiteInferior.Text = "-" + amplitudMaxima.ToString("F");
-            lblLimiteInferiorResultante.Text = amplitudMaximaResultado.ToString("F");
-            lblLimiteSuperiorResultante.Text = "-" +  amplitudMaximaResultado.ToString("f");
+            lblLimiteSuperiorResultante.Text = amplitudMaxima.ToString("F");
+            lblLimiteInferiorResultante.Text = "-" +  amplitudMaxima.ToString("F");
 
             plnEjeX.Points.Clear();
             plnEjeX.Points.Add(adaptarCoordenadas(tiempoInicial,0.0,tiempoInicial,amplitudMaxima));
             plnEjeX.Points.Add(adaptarCoordenadas(tiempoFinal,0.0,tiempoInicial,amplitudMaxima));
             plnEjeXResultante.Points.Clear();
-            plnEjeXResultante.Points.Add(tiempoInicial, 0.0, tiempoInicial, amplitudMaximaResultado));
-            plnEjeXResultante.Points.Add(adaptarCoordenadas(tiempoFinal, 0.0, tiempoInicial, amplitudMaximaResultado));
+            plnEjeXResultante.Points.Add(adaptarCoordenadas(tiempoInicial, 0.0, tiempoInicial, amplitudMaxima));
+            plnEjeXResultante.Points.Add(adaptarCoordenadas(tiempoFinal, 0.0, tiempoInicial, amplitudMaxima));
 
             plnEjeY.Points.Clear();
             plnEjeY.Points.Add(adaptarCoordenadas(0.0, amplitudMaxima, tiempoInicial, amplitudMaxima));
             plnEjeY.Points.Add(adaptarCoordenadas(0.0, -amplitudMaxima, tiempoInicial, amplitudMaxima));
             plnEjeYResultante.Points.Clear();
-            plnEjeYResultante.Points.Add(0.0, amplitudMaximaResultado, tiempoInicial, amplitudMaximaResultado));
-            plnEjeYResultante.Points.Add(adaptarCoordenadas(0.0, -amplitudMaximaResultado, tiempoInicial, amplitudMaximaResultado));
+            plnEjeYResultante.Points.Add(adaptarCoordenadas(0.0, amplitudMaxima, tiempoInicial, amplitudMaxima));
+            plnEjeYResultante.Points.Add(adaptarCoordenadas(0.0, -amplitudMaxima, tiempoInicial, amplitudMaxima));
 
         }
         public Point adaptarCoordenadas(double x, double y,double tiempoInicial, double amplitudMaxima)

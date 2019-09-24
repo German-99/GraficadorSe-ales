@@ -11,7 +11,7 @@ namespace GraficadorSeñales
         public SeñalResultante()
         {
             Muestras = new List<Muestra>();
-            AmplitudMaxima = 0;
+            AmplitudMaxima = 0.0;
         }
         public override double evaluar(double tiempo)
         {

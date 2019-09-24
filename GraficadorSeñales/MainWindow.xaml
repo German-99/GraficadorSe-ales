@@ -14,18 +14,23 @@
         <TextBlock HorizontalAlignment="Left" Margin="623,76,0,0" TextWrapping="Wrap" Text="Tiempo final" VerticalAlignment="Top"/>
         <TextBox x:Name="txtTiempoFinal" HorizontalAlignment="Left" Height="18" Margin="623,97,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="77"/>
         <Button Content="Graficar" HorizontalAlignment="Left" Margin="717,33,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <ScrollViewer x:Name="scrGrafica" HorizontalAlignment="Left" Height="248" Margin="175,161,0,0" VerticalAlignment="Top" Width="607" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Visible">
+        <ScrollViewer x:Name="scrGrafica" HorizontalAlignment="Left" Height="95" Margin="223,161,0,0" VerticalAlignment="Top" Width="559" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Visible">
             <Grid>
-                <Polyline Stroke="CornflowerBlue"  StrokeThickness="2" Name="plnGrafica"/>
-                <Polyline Stroke="Black" StrokeThickness="1" Name="plnEjeX"/>
-                <Polyline Stroke="Black" StrokeThickness="1" Name="plnEjeY"/>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="31*"/>
+                    <RowDefinition Height="200*"/>
+                </Grid.RowDefinitions>
+                <Polyline Stroke="CornflowerBlue"  StrokeThickness="2" Name="plnGrafica" Grid.RowSpan="2"/>
+                <Polyline Stroke="Black" StrokeThickness="1" Name="plnEjeX" Grid.RowSpan="2"/>
+                <Polyline Stroke="Black" StrokeThickness="1" Name="plnEjeY" Grid.RowSpan="2"/>
             </Grid>
         </ScrollViewer>
+
         <TextBlock HorizontalAlignment="Left" Margin="623,120,0,0" TextWrapping="Wrap" Text="Frecuencia de muestreo:" VerticalAlignment="Top"/>
         <TextBox x:Name="txtFrecuenciadeMuestreo" HorizontalAlignment="Left" Height="17" Margin="623,136,0,0" TextWrapping="Wrap" Text="1000" VerticalAlignment="Top" Width="68"/>
-        <TextBlock x:Name="lblLimiteSuperior" HorizontalAlignment="Left" Margin="22,182,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="-0.517,-3.477" TextAlignment="Right" Width="148"/>
-        <TextBlock x:Name="lblLimiteInferior" HorizontalAlignment="Left" Margin="22,393,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="-0.517,-3.477" TextAlignment="Right" Width="148"/>
-        <TextBlock HorizontalAlignment="Left" Margin="22,278,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="-0.517,-3.477" TextAlignment="Right" Width="148"/>
+        <TextBlock x:Name="lblLimiteSuperior" HorizontalAlignment="Left" Margin="134,161,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="-0.517,-3.477" TextAlignment="Right" Width="92" Height="21"/>
+        <TextBlock x:Name="lblLimiteInferior" HorizontalAlignment="Left" Margin="131,219,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="-0.517,-3.477" TextAlignment="Right" Width="95" Height="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="134,192,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="-0.517,-3.477" TextAlignment="Right" Width="92" Height="15"/>
         <Grid x:Name="panelConfiguracion" HorizontalAlignment="Left" Height="363" Margin="10,56,0,0" VerticalAlignment="Top" Width="190"/>
         <ComboBox x:Name="CbTipoSeñal" HorizontalAlignment="Left" Margin="10,26,0,0" VerticalAlignment="Top" Width="190" SelectedIndex="0" SelectionChanged="CbTipoSeñal_SelectionChanged">
             <ComboBoxItem>Señal Parabolica</ComboBoxItem>
@@ -38,6 +43,20 @@
         </ComboBox>
         <TextBlock HorizontalAlignment="Left" Margin="238,7,0,0" TextWrapping="Wrap" Text="Operacion: " VerticalAlignment="Top"/>
         <Grid x:Name="PanelconfiguracionOperacion" HorizontalAlignment="Left" Height="146" Margin="381,7,0,0" VerticalAlignment="Top" Width="237"/>
+        <ScrollViewer x:Name="scrGrafica_Copy" HorizontalAlignment="Left" Height="95" Margin="233,314,0,0" VerticalAlignment="Top" Width="559" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Visible">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="31*"/>
+                    <RowDefinition Height="200*"/>
+                </Grid.RowDefinitions>
+                <Polyline Stroke="CornflowerBlue"  StrokeThickness="2" x:Name="plnGraficaResultante" Grid.RowSpan="2"/>
+                <Polyline Stroke="Black" StrokeThickness="1" x:Name="plnEjeXResultante" Grid.RowSpan="2"/>
+                <Polyline Stroke="Black" StrokeThickness="1" x:Name="plnEjeYResultante" Grid.RowSpan="2"/>
+            </Grid>
+        </ScrollViewer>
+        <TextBlock x:Name="lblLimiteSuperiorResultante" HorizontalAlignment="Left" Margin="134,316,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="-0.517,-3.477" TextAlignment="Right" Width="92" Height="21"/>
+        <TextBlock x:Name="lblLimiteInferiorResultante" HorizontalAlignment="Left" Margin="131,374,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="-0.517,-3.477" TextAlignment="Right" Width="95" Height="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="134,347,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="-0.517,-3.477" TextAlignment="Right" Width="92" Height="15"/>
 
 
     </Grid>
