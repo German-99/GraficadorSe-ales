@@ -167,5 +167,37 @@ namespace GraficadorSeñales
                     break;
             }
         }
-    }
+
+		private void CbTipoSeñal_2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			panelConfiguracion.Children.Clear();
+			switch (CbTipoSeñal.SelectedIndex)
+			{
+				case 0: //Exponencial
+					break;
+				case 1: //Senoidal
+					panelConfiguracion_2.Children.Add(new ConfiguracionSeñalSenoidal());
+					break;
+				case 2:
+					panelConfiguracion_2.Children.Add(new ConfiguracionSeñalExponencial());
+					break;
+				case 3:
+					panelConfiguracion_2.Children.Add(new ConfiguracionAudio());
+					break;
+				default:
+					break;
+
+			}
+
+		}
+		void mostrarSegundaSeñal(bool mostrar)
+		{
+			if (mostrar)
+			{
+				lblTipoSeñal_2.Visibility = Visibility.Hidden;
+				CbTipoSeñal_2.Visibility = Visibility.Hidden;
+				panelConfiguracion_2.Visibility = Visibility.Hidden;
+			}
+		}
+	}
 }

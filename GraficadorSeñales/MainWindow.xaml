@@ -42,7 +42,12 @@
             <ComboBoxItem>Escala de amplitud</ComboBoxItem>
         </ComboBox>
         <TextBlock HorizontalAlignment="Left" Margin="238,7,0,0" TextWrapping="Wrap" Text="Operacion: " VerticalAlignment="Top"/>
-        <Grid x:Name="PanelconfiguracionOperacion" HorizontalAlignment="Left" Height="146" Margin="381,7,0,0" VerticalAlignment="Top" Width="237"/>
+        <Grid x:Name="PanelconfiguracionOperacion" HorizontalAlignment="Left" Height="97" Margin="238,64,0,0" VerticalAlignment="Top" Width="165">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="46*"/>
+                <RowDefinition Height="51*"/>
+            </Grid.RowDefinitions>
+        </Grid>
         <ScrollViewer x:Name="scrGrafica_Copy" HorizontalAlignment="Left" Height="95" Margin="233,314,0,0" VerticalAlignment="Top" Width="559" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Visible">
             <Grid>
                 <Grid.RowDefinitions>
@@ -57,7 +62,14 @@
         <TextBlock x:Name="lblLimiteSuperiorResultante" HorizontalAlignment="Left" Margin="134,316,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="-0.517,-3.477" TextAlignment="Right" Width="92" Height="21"/>
         <TextBlock x:Name="lblLimiteInferiorResultante" HorizontalAlignment="Left" Margin="131,374,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="-0.517,-3.477" TextAlignment="Right" Width="95" Height="14"/>
         <TextBlock HorizontalAlignment="Left" Margin="134,347,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="-0.517,-3.477" TextAlignment="Right" Width="92" Height="15"/>
-
+        <TextBlock x:Name="lblTipoSeñal_2" HorizontalAlignment="Left" Margin="407,10,0,0" TextWrapping="Wrap" Text="Tipo de señal:" VerticalAlignment="Top"/>
+        <ComboBox x:Name="CbTipoSeñal_2" HorizontalAlignment="Left" Margin="407,26,0,0" VerticalAlignment="Top" Width="190" SelectedIndex="0" SelectionChanged="CbTipoSeñal_SelectionChanged">
+            <ComboBoxItem Content="Señal Parabolica"/>
+            <ComboBoxItem Content="Señal Senoidal"/>
+            <ComboBoxItem Content="Señal Exponencial"/>
+            <ComboBoxItem Content="Señal Audio"/>
+        </ComboBox>
+        <Grid x:Name="panelConfiguracion_2" HorizontalAlignment="Left" Height="355" Margin="408,64,0,0" VerticalAlignment="Top" Width="190"/>
 
     </Grid>
 </Window>
