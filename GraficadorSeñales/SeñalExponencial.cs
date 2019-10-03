@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GraficadorSeñales
 {
-    class SeñalExponencial : señal
+    class SeñalExponencial : Señal
     {
         public double Alpha { get; set; }
 

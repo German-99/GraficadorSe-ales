@@ -6,19 +6,13 @@ using System.Threading.Tasks;
 
 namespace GraficadorSeñales
 {
-    class SeñalSenoidal : señal
+    class SeñalSenoidal : Señal
     {
-        //Auto prperties
-        //Atributos encapsulados de c#
-        //No tienen rutinas al establecer u obtener valor
         public double Amplitud { get; set; }
         public double Fase { get; set; }
         public double Frecuencia { get; set; }
-        
-        
 
-        //Constrtuctor se ejecuta al instanciar la clase
-        //Sintaxis: public NombreClase(Parametros)
+
 
         public SeñalSenoidal()
         {
@@ -26,28 +20,31 @@ namespace GraficadorSeñales
             Fase = 0.0;
             Frecuencia = 1.0;
 
-            AmplitudMaxima = 0.0;
-
             Muestras = new List<Muestra>();
+            AmplitudMaxima = 0.0;
         }
 
-        public SeñalSenoidal(double amplitud, double fase, double frecuencia)
+        public SeñalSenoidal(double amplitud,
+            double fase, double frecuencia)
         {
             Amplitud = amplitud;
             Fase = fase;
             Frecuencia = frecuencia;
 
-            Muestras = new List<Muestra>(); 
+            AmplitudMaxima = 0.0;
+
+            Muestras = new List<Muestra>();
+
         }
 
         override public double evaluar(double tiempo)
         {
-            double resultado = 0.0;
-
-            //Evaluar la función
-            resultado = Amplitud * Math.Sin((2.0 * Math.PI * Frecuencia * tiempo) + Fase);
+            double resultado;
+            resultado =
+                Amplitud * Math.Sin(
+                    ((2 * Math.PI * Frecuencia) *
+                    tiempo) + Fase);
             return resultado;
         }
-
     }
 }

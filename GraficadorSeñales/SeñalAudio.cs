@@ -8,7 +8,7 @@ using NAudio.Wave;
 
 namespace GraficadorSeñales
 {
-    class SeñalAudio : señal
+    class SeñalAudio : Señal
     {
         public string RutaArchivo { get; set; }
 
@@ -16,23 +16,30 @@ namespace GraficadorSeñales
         {
             RutaArchivo = rutaArchivo;
             Muestras = new List<Muestra>();
-            AudioFileReader reader = new AudioFileReader(rutaArchivo);
-
             AmplitudMaxima = 0.0;
+
+            AudioFileReader reader =
+                new AudioFileReader(rutaArchivo);
+
             TiempoInicial = 0.0;
             TiempoFinal = reader.TotalTime.TotalSeconds;
-            FrecuenciaMuestreo = reader.WaveFormat.SampleRate;
+            FrecuenciaMuestreo =
+                reader.WaveFormat.SampleRate;
 
-            var bufferLectura = new float[reader.WaveFormat.Channels];
+            var bufferLectura =
+                new float[reader.WaveFormat.Channels];
             double instanteActual = 0.0;
-            double periodoMuestreo = 1.0 / FrecuenciaMuestreo;
+            double periodoMuestro = 1.0 / FrecuenciaMuestreo;
             int muestrasLeidas = 0;
             do
             {
-                muestrasLeidas = reader.Read(bufferLectura, 0,reader.WaveFormat.Channels);
+                muestrasLeidas =
+                    reader.Read(bufferLectura, 0,
+                    reader.WaveFormat.Channels);
                 if (muestrasLeidas > 0)
                 {
-                    double max = bufferLectura.Take(muestrasLeidas).Max();
+                    double max =
+                        bufferLectura.Take(muestrasLeidas).Max();
                     Muestras.Add(new Muestra(instanteActual, max));
                     if (Math.Abs(max) > AmplitudMaxima)
                     {
@@ -40,7 +47,7 @@ namespace GraficadorSeñales
                     }
                 }
 
-                instanteActual += periodoMuestreo;
+                instanteActual += periodoMuestro;
             } while (muestrasLeidas > 0);
 
         }

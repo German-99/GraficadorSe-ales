@@ -27,13 +27,15 @@ namespace GraficadorSeñales
             InitializeComponent();
         }
 
-
-        private void BtnElegir_Click(object sender, RoutedEventArgs e)
+        private void BtnElegirArchivo_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog fileDialog = new OpenFileDialog();
+            OpenFileDialog fileDialog =
+                new OpenFileDialog();
+
             if ((bool)fileDialog.ShowDialog())
             {
-                txtRutaArchivo.Text = fileDialog.FileName;
+                txtRutaArchivo.Text =
+                    fileDialog.FileName;
             }
         }
     }

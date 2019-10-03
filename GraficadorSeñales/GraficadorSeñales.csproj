@@ -40,6 +40,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -70,10 +71,16 @@
     </Compile>
     <Compile Include="Función.cs" />
     <Compile Include="Muestra.cs" />
+    <Compile Include="OperacionDesplazamientoAmplitud.xaml.cs">
+      <DependentUpon>OperacionDesplazamientoAmplitud.xaml</DependentUpon>
+    </Compile>
     <Compile Include="OperacionEscalaAmplitud.xaml.cs">
       <DependentUpon>OperacionEscalaAmplitud.xaml</DependentUpon>
     </Compile>
-    <Compile Include="señal.cs" />
+    <Compile Include="OperacionEscalaExponencial.xaml.cs">
+      <DependentUpon>OperacionEscalaExponencial.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Señal.cs" />
     <Compile Include="SeñalAudio.cs" />
     <Compile Include="SeñalExponencial.cs" />
     <Compile Include="SeñalParabolica.cs" />
@@ -103,7 +110,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="OperacionDesplazamientoAmplitud.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="OperacionEscalaAmplitud.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OperacionEscalaExponencial.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

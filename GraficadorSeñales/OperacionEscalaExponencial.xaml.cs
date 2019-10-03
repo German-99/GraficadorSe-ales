@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,11 +16,11 @@ using System.Windows.Shapes;
 namespace GraficadorSeñales
 {
     /// <summary>
-    /// Lógica de interacción para ConfiguracionSeñalSenoidal.xaml
+    /// Lógica de interacción para OperacionEscalaExponencial.xaml
     /// </summary>
-    public partial class ConfiguracionSeñalSenoidal : UserControl
+    public partial class OperacionEscalaExponencial : UserControl
     {
-        public ConfiguracionSeñalSenoidal()
+        public OperacionEscalaExponencial()
         {
             InitializeComponent();
         }

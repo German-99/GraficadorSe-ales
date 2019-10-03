@@ -6,16 +6,19 @@ using System.Threading.Tasks;
 
 namespace GraficadorSeñales
 {
-    class SeñalResultante : señal
+    class SeñalResultante : Señal
     {
+
         public SeñalResultante()
         {
             Muestras = new List<Muestra>();
             AmplitudMaxima = 0.0;
         }
+
         public override double evaluar(double tiempo)
         {
             throw new NotImplementedException();
         }
+
     }
 }
