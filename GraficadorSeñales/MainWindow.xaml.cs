@@ -189,6 +189,9 @@ namespace GraficadorSeñales
                         Señal.escalaExponencial(
                             señal, exponente);
                     break;
+                case 4:
+                    señalResultante = Señal.transdormadaFourier(señal);
+                        break;
                 default:
                     señalResultante = null;
                     break;
@@ -397,5 +400,6 @@ namespace GraficadorSeñales
                     Visibility.Hidden;
             }
         }
+
     }
 }

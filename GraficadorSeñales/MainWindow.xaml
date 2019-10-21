@@ -28,8 +28,8 @@
         </ScrollViewer>
         <TextBlock HorizontalAlignment="Left" Margin="85,126,0,0" TextWrapping="Wrap" Text="Frecuencia de muestreo:" VerticalAlignment="Top" Grid.Column="1"/>
         <TextBox x:Name="txtFrecuenciaMuestreo" HorizontalAlignment="Left" Height="23" Margin="85,144,0,0" TextWrapping="Wrap" Text="1000" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
-        <TextBlock x:Name="lblLimiteSuperior" HorizontalAlignment="Left" Margin="20,202,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="-0.238,0.646" Width="193" TextAlignment="Right"/>
-        <TextBlock x:Name="lblLimiteInferior" HorizontalAlignment="Left" Margin="20,349,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="-0.238,0.646" Width="193" TextAlignment="Right"/>
+        <TextBlock x:Name="lblLimiteSuperior" HorizontalAlignment="Left" Margin="20,202,0,0" TextWrapping="Wrap" Text="500.00" VerticalAlignment="Top" RenderTransformOrigin="-0.238,0.646" Width="193" TextAlignment="Right"/>
+        <TextBlock x:Name="lblLimiteInferior" HorizontalAlignment="Left" Margin="20,349,0,0" TextWrapping="Wrap" Text="-500.00" VerticalAlignment="Top" RenderTransformOrigin="-0.238,0.646" Width="193" TextAlignment="Right"/>
         <TextBlock HorizontalAlignment="Left" Margin="20,277,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="-0.238,0.646" Width="193" TextAlignment="Right"/>
         <Grid x:Name="panelConfiguracion" HorizontalAlignment="Left" Height="142" Margin="10,55,0,0" VerticalAlignment="Top" Width="203"/>
         <ComboBox x:Name="cbTipoSeñal" HorizontalAlignment="Left" Margin="10,28,0,0" VerticalAlignment="Top" Width="175" SelectedIndex="0" SelectionChanged="CbTipoSeñal_SelectionChanged">
@@ -44,8 +44,8 @@
                 <Polyline Stroke="Black" StrokeThickness="1" x:Name="plnEjeYResultante" />
             </Grid>
         </ScrollViewer>
-        <TextBlock x:Name="lblLimiteSuperiorResultante" HorizontalAlignment="Left" Margin="20,407,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="-0.238,0.646" Width="193" TextAlignment="Right"/>
-        <TextBlock x:Name="lblLimiteInferiorResultante" HorizontalAlignment="Left" Margin="20,551,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="-0.238,0.646" Width="193" TextAlignment="Right"/>
+        <TextBlock x:Name="lblLimiteSuperiorResultante" HorizontalAlignment="Left" Margin="20,407,0,0" TextWrapping="Wrap" Text="500.00" VerticalAlignment="Top" RenderTransformOrigin="-0.238,0.646" Width="193" TextAlignment="Right"/>
+        <TextBlock x:Name="lblLimiteInferiorResultante" HorizontalAlignment="Left" Margin="20,551,0,0" TextWrapping="Wrap" Text="-500.00" VerticalAlignment="Top" RenderTransformOrigin="-0.238,0.646" Width="193" TextAlignment="Right"/>
         <TextBlock HorizontalAlignment="Left" Margin="20,480,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="-0.238,0.646" Width="193" TextAlignment="Right"/>
         <TextBlock HorizontalAlignment="Left" Margin="208,10,0,0" TextWrapping="Wrap" Text="Operación:" VerticalAlignment="Top"/>
         <ComboBox x:Name="cbOperacion" HorizontalAlignment="Left" Margin="208,28,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="CbOperacion_SelectionChanged">
@@ -63,6 +63,7 @@
             <ComboBoxItem Content="Señal senoidal"/>
             <ComboBoxItem Content="Señal audio"/>
         </ComboBox>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="53,480,0,0" TextWrapping="Wrap" Text="0 Hz" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged" Name="lblHz"/>
 
 
     </Grid>
